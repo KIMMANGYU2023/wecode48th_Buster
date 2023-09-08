@@ -3,7 +3,7 @@ CREATE TABLE orders (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     name VARCHAR(50) NOT NULL, 
-    email VARCHAR(50) NULL UNIQUE, 
+    email VARCHAR(50) NULL, 
     phone_number VARCHAR(50) NOT NULL,
     delivery_address VARCHAR(100) NOT NULL,
     delivery_name VARCHAR(50) NOT NULL,

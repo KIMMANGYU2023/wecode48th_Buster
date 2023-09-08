@@ -1,7 +1,7 @@
 const oderDao = require("../models/orderDao");
 
 const postOrder = async (
-    userId, 
+    userId,
     name, 
     email, 
     phoneNumber, 
@@ -10,8 +10,9 @@ const postOrder = async (
     deliveryPhoneNumber, 
     address
     ) => {
-    await oderDao.postOrder(
-        userId, 
+        console.log(postOrderw)
+    return await oderDao.postOrder(
+        userId,
         name, 
         email, 
         phoneNumber, 

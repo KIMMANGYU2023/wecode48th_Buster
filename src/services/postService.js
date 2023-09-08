@@ -5,7 +5,7 @@ const getCategory = async ()=>{
 };
 
 const getPostScrap = async (userId, postId) => {
-  return await postDao.getPostScrap(userId, postId);
+    return await postDao.getPostScrap(userId, postId);
 };
 
 const deletePostScrap = async (userId, postId)=>{

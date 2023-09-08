@@ -2,29 +2,29 @@ const orderService = require ("../services/orderService")
 const { catchAsync } = require('../utils/error')
 
 const postOrder = catchAsync(async(req, res) => {
-    const { 
+    const {
+        userId,
+        name,
+        email, 
+        phoneNumber, 
+        deliveryAddress, 
+        deliveryName, 
+        deliveryPhoneNumber,
+        address
+    } = req.body;
+    console.log(req.body);
+    const posts = await orderService.postOrder(
         userId,
         name, 
         email, 
         phoneNumber, 
         deliveryAddress, 
         deliveryName, 
-        deliveryPhoneNumber, 
-        address 
-    } = req.body;
-
-    const posts = await orderService.postOrder(
-        userId, 
-        name, 
-        email, 
-        phoneNumber, 
-        deliveryAddress, 
-        deliveryName, 
-        deliveryPhoneNumber, 
+        deliveryPhoneNumber,
         address
         );
-
-    res.status(200).json({ data: posts });  
+    console.log("posts", posts)
+    res.status(200).json({ data: posts});  
 });
 
 const postPayment = catchAsync(async (req, res) => {

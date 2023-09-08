@@ -13,7 +13,7 @@ const getAllProducts = catchAsync(async (req, res) => {
 
 const getProductsByCategoryId = catchAsync(async (req, res) => {
   const { categoryId } = req.params;
-  const { offset = 0, limit = 10 } = req.query;
+  const { offset = 0, limit = 8 } = req.query;
 
   const products = await productService.getProductsByCategoryId(
     categoryId,

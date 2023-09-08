@@ -1,6 +1,6 @@
 const { AppDataSource } = require("./dataSource");
 
-const getAllProducts = async (offset = 0, limit = 10) => {
+const getAllProducts = async (offset = 0, limit = 40) => {
   try {
     const products = await AppDataSource.query(
       `
@@ -35,6 +35,7 @@ const getAllProducts = async (offset = 0, limit = 10) => {
 
 const getProductsByCategoryId = async (categoryId, offset = 0, limit = 10) => {
   try {
+    console.log("123")
     const products = await AppDataSource.query(
       `
         SELECT 

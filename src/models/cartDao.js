@@ -16,10 +16,10 @@ const insertCart = async (userId, productId, productCount) => {
     `,
       [userId, productId, productCount]
     );
-  } catch {
-    const error = new Error("dataSource Error");
-    error.statusCode = 400;
-    throw error;
+  } catch(error){
+    const eroor = new Error("dataSource Error");
+    eroor.statusCode = 400;
+    throw eroor;
   }
 };
 

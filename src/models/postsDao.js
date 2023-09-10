@@ -24,7 +24,6 @@ const getCategory = async () => {
   }
 };
 
-
 const getPostScrap = async (userId, postId) => {
   try{
     const result = await AppDataSource.query(

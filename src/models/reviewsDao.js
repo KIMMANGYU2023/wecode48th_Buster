@@ -15,20 +15,20 @@ const setReview = async (userID) => {
     }catch{
     const error = new Error ('dataSource Error');
     error.ststusCode = 400;
- 
+
     throw error;
-   }
- }; 
+  }
+}; 
 
 const createReview = async (productId, userId, content, rating) => {
     try{
     const result = await AppDataSource.query(
         `
         INSERT INTO reviews (
-         product_id,
-         user_id,
-         content,
-         rating
+          product_id,
+          user_id,
+          content,
+          rating
       ) VALUES (
         ?,?,?
     );
@@ -39,10 +39,10 @@ const createReview = async (productId, userId, content, rating) => {
     }catch{
     const error = new Error ('dataSource Error');
     error.ststusCode = 400;
- 
+
     throw error;
-   }
- };
+  }
+};
 
 const modifyReview =  async ( content, rating, reviewId)=>{
     try {
@@ -50,26 +50,26 @@ const modifyReview =  async ( content, rating, reviewId)=>{
         `
         UPDATE reviews
         SET
-         content = ?,
-         rating = ?
+          content = ?,
+          rating = ?
         WHERE
-         id = ?
+          id = ?
         ;
         `,
         [content, rating, reviewId]
-     );
+    );
 return result;
   }catch{
-   const error = new Error ('dataSource Error');
-   error.ststusCode = 400;
+    const error = new Error ('dataSource Error');
+    error.ststusCode = 400;
 
-   throw error;
+    throw error;
   }
 }; 
 
 const deleteReview = async (reviewId)=>{
- try{
-   const result = await AppDataSource.query(
+  try{
+    const result = await AppDataSource.query(
     `
     DELETE FROM reviews
     WHERE id = ?
@@ -81,9 +81,9 @@ const deleteReview = async (reviewId)=>{
     }catch{
     const error = new Error ('dataSource Error');
     error.ststusCode = 400;
- 
+
     throw error;
-   }
- };
+  }
+};
 
 module.exports = { setReview, createReview, modifyReview, deleteReview };

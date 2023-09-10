@@ -40,7 +40,6 @@ const getUserByEmail = async (email) => {
       `,
       [email]
     );
-
     return result;
   } catch {
     const error = new Error("dataSource Error email");
@@ -64,7 +63,7 @@ const getUserById = async (id) => {
       `,
       [id]
     );
-
+    
     return result;
   } catch {
     const error = new Error('dataSource Error id');

@@ -2,9 +2,9 @@ const jwt = require("jsonwebtoken");
 const userService = require("../services/userServices");
 
 const loginRequired = async (req, res, next) => {
-  try {
-    const accessToken = req.headers.authorization;
-    
+  try 
+  {
+    const accessToken = req.headers['authorization'];
     if (!accessToken) {
       const error = new Error("NEED_ACCESS_TOKEN");
       error.statusCode = 401;
@@ -12,7 +12,6 @@ const loginRequired = async (req, res, next) => {
     }
 
     const payload = jwt.verify(accessToken, process.env.JWT_SECRET);
-
     const user = await userService.getUserById(payload.id);
     if (!user) {
       console.error(`No user found for id: ${payload.id}`);

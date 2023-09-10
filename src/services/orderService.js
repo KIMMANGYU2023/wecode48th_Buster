@@ -10,7 +10,6 @@ const postOrder = async (
     deliveryPhoneNumber, 
     address
     ) => {
-        console.log(postOrderw)
     return await oderDao.postOrder(
         userId,
         name, 

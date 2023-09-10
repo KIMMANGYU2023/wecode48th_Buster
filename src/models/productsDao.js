@@ -33,9 +33,8 @@ const getAllProducts = async (offset = 0, limit = 40) => {
   }
 };
 
-const getProductsByCategoryId = async (categoryId, offset = 0, limit = 10) => {
+const getProductsByCategoryId = async (categoryId, offset = 0, limit = 40) => {
   try {
-    console.log("123")
     const products = await AppDataSource.query(
       `
         SELECT 
@@ -43,13 +42,14 @@ const getProductsByCategoryId = async (categoryId, offset = 0, limit = 10) => {
         p.products_category_id, 
         p.name, 
         p.price, 
-        p.discount_percentage,
+        p.discount_percentage, 
+        p.brand_id, 
         p.stock, 
         p.description, 
         p.created_at, 
         p.updated_at, 
-        pc.name as category_name,
-        b.name as bradn_name,
+        pc.name as category_name, 
+        b.name as brand_name,
         pi.image_url
         FROM products p
         INNER JOIN products_categories pc ON p.products_category_id = pc.id

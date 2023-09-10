@@ -12,7 +12,6 @@ const postOrder = catchAsync(async(req, res) => {
         deliveryPhoneNumber,
         address
     } = req.body;
-    console.log(req.body);
     const posts = await orderService.postOrder(
         userId,
         name, 
@@ -23,14 +22,12 @@ const postOrder = catchAsync(async(req, res) => {
         deliveryPhoneNumber,
         address
         );
-    console.log("posts", posts)
     res.status(200).json({ data: posts});  
 });
 
 const postPayment = catchAsync(async (req, res) => {
     const userId = req.user.id;
     const { amount } = req.body;
-
 
     if (!amount || isNaN(amount) || amount <= 0) {
     return res.status(400).json({ error: 'Invalid amount' });

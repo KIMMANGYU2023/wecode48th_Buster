@@ -48,4 +48,4 @@ const signIn = async (email, password) => {
   return accessToken;
 };
 
-module.exports = { signUp, signIn, getUserById };
+module.exports = { signUp, signIn, getUserById};

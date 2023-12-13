@@ -8,6 +8,7 @@ Buster Project (wecode-project-Buster) backend
 
 멤버 구성(48-Buster-backend) 김창현 : 리뷰CRUD, 주문하기, 커뮤니티 게시글 리스트, (게시글,상품) 스크랩
 
+김창현 : 리뷰(CRUD), 제품 주문하기, 게시글&상품 스크랩
 김시연 : ERD모델링, 장바구니 리스트, 장바구니 삭제, 장바구니 담기, 게시글 상세
 
 김만규 : ERD모델링, 로그인, 회원가입, 결제 API, 제품 리스트

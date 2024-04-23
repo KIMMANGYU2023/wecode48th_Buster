@@ -8,7 +8,7 @@ const createUser = async (nickname, email, password) => {
           nickname, 
           email, 
           password
-        ) VALUES (
+          ) VALUES (
           ?,
           ?,
           ?
@@ -16,13 +16,12 @@ const createUser = async (nickname, email, password) => {
       `,
       [nickname, email, password]
     );
-
     return result;
   } catch{
-    const error = new Error("dataSource Error");
-    error.statusCode = 400;
-
-    throw error;
+    const eroor = new Error("dataSource Error");
+    eroor.statusCode = 400;
+    console.log(eroor);
+    throw eroor;
   }
 };
 

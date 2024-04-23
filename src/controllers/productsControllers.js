@@ -1,5 +1,4 @@
 const { catchAsync } = require("../utils/error");
-
 const productService = require("../services/productsService");
 
 const getAllProducts = catchAsync(async (req, res) => {

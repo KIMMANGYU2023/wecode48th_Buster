@@ -19,7 +19,7 @@ const getPostScrap = catchAsync(async (req, res) => {
 const deletePostScrap = catchAsync(async (req, res) => {
   const { postId } = req.body;
   const userId = req.user.id;
-  const posts = await postService.deletePostScrap(userId, postId);
+  const posts =  await postService.deletePostScrap(userId, postId);
 
   res.status(200).json({ data: posts });
 });

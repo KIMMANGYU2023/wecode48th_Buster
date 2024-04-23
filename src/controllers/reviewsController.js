@@ -4,7 +4,6 @@ const { catchAsync } = require('../utils/error')
     const reviewSet = catchAsync(async(req, res) => {
     const userId = req.user.id;
     const reviewSetId = await reviewsService.reviewSet(userId);
-    
     res.status(200).json({reviewSetId});
 });
 

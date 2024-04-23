@@ -99,3 +99,10 @@ const postPayment = async (userId, amount) => {
 
 
 module.exports = { postOrder, postPayment};
+
+
+
+
+
+
+
